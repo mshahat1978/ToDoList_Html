@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Do List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">To Do List</h1>
+      <p class="app__subtitle">Tasks are saved automatically in your browser.</p>
+    </header>
+
+    <form class="todo-form" id="todo-form" autocomplete="off">
+      <input
+        class="todo-form__input"
+        id="todo-input"
+        type="text"
+        placeholder="What needs to be done?"
+        aria-label="New task"
+        maxlength="200"
+      />
+      <button class="todo-form__submit" type="submit">Add</button>
+    </form>
+
+    <section class="toolbar" id="toolbar" hidden>
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button class="filters__btn is-active" type="button" data-filter="all">All</button>
+        <button class="filters__btn" type="button" data-filter="active">Active</button>
+        <button class="filters__btn" type="button" data-filter="completed">Completed</button>
+      </div>
+      <button class="toolbar__clear" id="clear-completed" type="button">Clear completed</button>
+    </section>
+
+    <ul class="todo-list" id="todo-list"></ul>
+
+    <p class="empty-state" id="empty-state">No tasks yet. Add your first one above.</p>
+
+    <footer class="app__footer" id="app-footer" hidden>
+      <span class="app__count" id="items-left">0 items left</span>
+    </footer>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
